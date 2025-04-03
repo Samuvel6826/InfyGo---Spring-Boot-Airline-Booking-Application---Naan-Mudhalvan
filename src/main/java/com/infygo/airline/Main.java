@@ -203,7 +203,7 @@ public class Main implements CommandLineRunner {
      * Print details of a single flight
      */
     private void printFlightDetails(Flight flight, double fare) {
-        System.out.printf("%-10s %-15s %-10s %-15s ₹%-9.2f %-12s %-10d\n",
+        System.out.printf("%-10s %-15s %-10s %-15s Rs %-9.2f %-12s %-10d\n",
                 flight.getFlightId(),
                 flight.getAirlines(),
                 flight.getSource(),
