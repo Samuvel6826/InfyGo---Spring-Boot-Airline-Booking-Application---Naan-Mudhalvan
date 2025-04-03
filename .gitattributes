@@ -1,5 +1,12 @@
-echo "/mvnw text eol=lf" >> .gitattributes
+# Append proper formatting to .gitattributes
+echo "/mvnw text eol=lf" > .gitattributes
 echo "*.cmd text eol=crlf" >> .gitattributes
+
+# Add the changes
 git add .gitattributes
-git commit -m "Updated .gitattributes to fix line endings"
+
+# Commit the changes with a meaningful message
+git commit -m "Fixed .gitattributes formatting and line endings"
+
+# Push to the branch
 git push origin master
