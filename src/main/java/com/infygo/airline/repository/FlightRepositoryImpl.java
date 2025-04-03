@@ -45,13 +45,16 @@ public class FlightRepositoryImpl implements FlightRepository {
         // flights
         return routeFlights.stream()
                 .filter(flight -> flight.getJourneyDate().equals(journeyDate))
+                .sorted((f1, f2) -> f1.getFlightId().compareTo(f2.getFlightId())) // Sort by flight ID
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Flight> getAllFlights() {
-        // Return a new list to prevent external modification of our storage
-        return new ArrayList<>(flightMap.values());
+        // Return a new sorted list to prevent external modification of our storage
+        return flightMap.values().stream()
+                .sorted((f1, f2) -> f1.getFlightId().compareTo(f2.getFlightId())) // Sort by flight ID
+                .collect(Collectors.toList());
     }
 
     /**

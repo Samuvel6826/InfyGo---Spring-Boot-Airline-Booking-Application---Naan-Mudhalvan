@@ -4,7 +4,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-rebuild.sh
+*.tmp
+*.bak
+
+# Exclude cleanup script from being ignored
+!cleanup.sh
 
 ### Java ###
 # Compiled class files
@@ -13,6 +17,12 @@ rebuild.sh
 # Log files
 *.log
 logs/
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
 # Package files
 *.jar
@@ -26,6 +36,24 @@ logs/
 # JVM crash logs
 hs_err_pid*
 replay_pid*
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar.md5
+.mvn/wrapper/maven-wrapper.jar.sha1
+maven-wrapper.jar.md5
+maven-wrapper.jar.sha1
 
 ### Spring Boot ###
 spring-boot-*.pid
@@ -45,8 +73,17 @@ spring-boot-*.pid
 *.iws
 *.iml
 *.ipr
+.settings/
 out/
 .idea_modules/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 ### NetBeans ###
 /nbproject/private/
@@ -57,10 +94,6 @@ out/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-*.code-workspace
 
 ### OS Specific ###
 # macOS
@@ -96,6 +129,7 @@ Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
+Desktop.ini
 *.stackdump
 [Dd]esktop.ini
 

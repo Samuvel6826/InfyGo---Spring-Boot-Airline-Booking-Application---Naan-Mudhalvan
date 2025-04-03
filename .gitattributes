@@ -1,12 +1,22 @@
-# Append proper formatting to .gitattributes
-echo "/mvnw text eol=lf" > .gitattributes
-echo "*.cmd text eol=crlf" >> .gitattributes
+# Set default behavior to automatically normalize line endings
+* text=auto
 
-# Add the changes
-git add .gitattributes
+# Explicitly declare text files to be normalized
+*.java text
+*.xml text
+*.properties text
+*.md text
+*.txt text
 
-# Commit the changes with a meaningful message
-git commit -m "Fixed .gitattributes formatting and line endings"
+# Declare files that will always have specific line endings
+mvnw text eol=lf
+*.sh text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
 
-# Push to the branch
-git push origin master
+# Denote all files that are truly binary and should not be modified
+*.jar binary
+*.war binary
+*.zip binary
+*.tar.gz binary
+*.class binary
